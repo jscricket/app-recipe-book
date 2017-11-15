@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+	feature: string =''; 
+
+	onGetFeature(feature){
+		this.feature = feature;
+	}
 }
