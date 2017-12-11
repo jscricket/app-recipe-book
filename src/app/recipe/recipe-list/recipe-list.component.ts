@@ -4,6 +4,7 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/cor
 import { Recipe } from './../recipe.model';
 import { RecipeService } from './../../services/recipe.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 @Component({
 	selector: 'app-recipe-list',
 	templateUrl: './recipe-list.component.html',
@@ -19,7 +20,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 	constructor(
 		private recipeService: RecipeService,
 		private router: Router,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		public authService: AuthService
 	) { }
 
 	ngOnInit() {
@@ -43,4 +45,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		this.subscription.unsubscribe();		
 	}
+
+	
 }
